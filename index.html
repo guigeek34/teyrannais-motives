@@ -8,13 +8,21 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
 
+    <!-- Google Fonts selon la charte : Bree Serif & Quicksand -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --primary-teal: #388e8e;
-            --accent-orange: #ea7a5c;
-            --accent-yellow: #f5bc3f;
+            /* Palette officielle de la charte graphique */
+            --teal-primary: #257c83;
+            --yellow-accent: #f3b937;
+            --coral-accent: #f06f58;
+            --peach-light: #f0ac6f;
+            --blue-soft: #75b4e0;
             --facebook-blue: #1877f2;
-            --light-bg: #faf8f5;
+            --light-bg: #f9f8f6;
             --dark-text: #2c3e50;
         }
 
@@ -25,19 +33,25 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 500;
             line-height: 1.6;
             color: var(--dark-text);
             background-color: var(--light-bg);
             padding: 0;
         }
 
+        h1, h2, h3 {
+            font-family: 'Bree Serif', serif;
+            font-weight: normal;
+        }
+
         header {
             background-color: white;
             padding: 40px 20px;
             text-align: center;
-            border-bottom: 4px solid var(--primary-teal);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-bottom: 5px solid var(--teal-primary);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
         }
 
         .header-container {
@@ -54,24 +68,24 @@
         }
 
         .logo-title img {
-            width: 50px;
-            height: 50px;
+            width: 55px;
+            height: 55px;
         }
 
         h1 {
-            color: var(--primary-teal);
-            font-size: 2.2rem;
+            color: var(--teal-primary);
+            font-size: 2.3rem;
         }
 
         .tagline {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             color: #666;
-            font-style: italic;
+            font-weight: 700;
         }
 
         main {
             max-width: 800px;
-            margin: 30px auto;
+            margin: 35px auto;
             padding: 0 20px;
         }
 
@@ -79,15 +93,15 @@
             background: white;
             padding: 30px;
             margin-bottom: 25px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
         }
 
         h2 {
-            color: var(--accent-orange);
-            font-size: 1.5rem;
+            color: var(--coral-accent);
+            font-size: 1.6rem;
             margin-bottom: 15px;
-            border-bottom: 2px solid #f0f0f0;
+            border-bottom: 2px solid var(--light-bg);
             padding-bottom: 8px;
         }
 
@@ -99,66 +113,79 @@
         li {
             position: relative;
             padding-left: 25px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         li::before {
             content: "•";
-            color: var(--accent-yellow);
+            color: var(--yellow-accent);
             font-weight: bold;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             position: absolute;
             left: 5px;
-            top: -5px;
+            top: -8px;
         }
 
         .cta-box {
             text-align: center;
-            background: #fff8f0;
-            border: 1px solid var(--accent-yellow);
+            background: #fffdf8;
+            border: 2px solid var(--peach-light);
         }
 
         .buttons-group {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 15px;
+            align-items: center;
+            gap: 12px;
             margin-top: 20px;
         }
 
         .btn {
             display: inline-block;
-            padding: 12px 25px;
+            padding: 12px 22px;
             text-decoration: none;
             border-radius: 25px;
-            font-weight: bold;
-            transition: opacity 0.3s, transform 0.2s;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: all 0.2s ease-in-out;
+            color: white;
+            border: none;
         }
 
         .btn:hover {
             opacity: 0.9;
             transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
-        .btn-primary {
-            background-color: var(--primary-teal);
-            color: white;
+        .btn-email {
+            background-color: var(--coral-accent);
+        }
+
+        .btn-helloasso {
+            background-color: var(--teal-primary);
         }
 
         .btn-facebook {
             background-color: var(--facebook-blue);
-            color: white;
         }
 
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 25px 20px;
             font-size: 0.9rem;
-            color: #888;
+            color: #777;
         }
 
         footer a {
-            color: #666;
+            color: var(--teal-primary);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        footer a:hover {
             text-decoration: underline;
         }
     </style>
@@ -200,8 +227,8 @@
             <p>Vous habitez Teyran et souhaitez vous investir, soutenir l'association ou suivre nos actualités ?</p>
             
             <div class="buttons-group">
-                <a href="mailto:contact@teyrannaismotives.fr" class="btn btn-outline">Nous contacter par e-mail</a>
-                <a href="https://www.helloasso.com/associations/teyrannais-motives" target="_blank" rel="noopener" class="btn btn-primary">Adhérer sur HelloAsso</a>
+                <a href="mailto:contact@teyrannaismotives.fr" class="btn btn-email">Nous contacter par e-mail</a>
+                <a href="https://www.helloasso.com/associations/teyrannais-motives" target="_blank" rel="noopener" class="btn btn-helloasso">Adhérer sur HelloAsso</a>
                 <a href="https://www.facebook.com/profile.php?id=61564991493319" target="_blank" rel="noopener" class="btn btn-facebook">Suivre sur Facebook</a>
             </div>
         </div>
@@ -209,7 +236,7 @@
 
     <footer>
         <p>&copy; 2026 Les Teyrannais Motivés — Association loi 1901 — Teyran (34820)</p>
-        <p style="margin-top: 5px;">
+        <p style="margin-top: 8px;">
             <a href="mailto:contact@teyrannaismotives.fr">contact@teyrannaismotives.fr</a> | 
             <a href="https://www.helloasso.com/associations/teyrannais-motives" target="_blank" rel="noopener">HelloAsso</a> | 
             <a href="https://www.facebook.com/profile.php?id=61564991493319" target="_blank" rel="noopener">Facebook</a>
