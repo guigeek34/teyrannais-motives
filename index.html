@@ -4,72 +4,214 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Les Teyrannais Motivés</title>
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
+
     <style>
+        :root {
+            --primary-teal: #388e8e;
+            --accent-orange: #ea7a5c;
+            --accent-yellow: #f5bc3f;
+            --facebook-blue: #1877f2;
+            --light-bg: #faf8f5;
+            --dark-text: #2c3e50;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
+            color: var(--dark-text);
+            background-color: var(--light-bg);
+            padding: 0;
+        }
+
+        header {
+            background-color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--primary-teal);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .header-container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
-            color: #333;
         }
-        header {
-            text-align: center;
-            padding: 40px 0;
-            background-color: #f4f4f4;
+
+        .logo-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .logo-title img {
+            width: 50px;
+            height: 50px;
+        }
+
+        h1 {
+            color: var(--primary-teal);
+            font-size: 2.2rem;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 25px;
             border-radius: 8px;
-            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
-        h1 { margin: 0; color: #2c3e50; }
-        .section { margin-bottom: 30px; }
+
+        h2 {
+            color: var(--accent-orange);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 8px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+
+        li::before {
+            content: "•";
+            color: var(--accent-yellow);
+            font-weight: bold;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 5px;
+            top: -5px;
+        }
+
+        .cta-box {
+            text-align: center;
+            background: #fff8f0;
+            border: 1px solid var(--accent-yellow);
+        }
+
+        .buttons-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
         .btn {
             display: inline-block;
-            background: #27ae60;
-            color: white;
-            padding: 10px 20px;
+            padding: 12px 25px;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 25px;
             font-weight: bold;
+            transition: opacity 0.3s, transform 0.2s;
         }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-teal);
+            color: white;
+        }
+
+        .btn-facebook {
+            background-color: var(--facebook-blue);
+            color: white;
+        }
+
         footer {
             text-align: center;
-            margin-top: 50px;
-            font-size: 0.9em;
-            color: #777;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        footer a {
+            color: #666;
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Les Teyrannais Motivés</h1>
-        <p>Un court slogan ou une phrase d'accroche pour décrire la mission</p>
+        <div class="header-container">
+            <div class="logo-title">
+                <img src="favicon.png" alt="Logo Les Teyrannais Motivés">
+                <h1>Les Teyrannais Motivés</h1>
+            </div>
+            <p class="tagline">Promouvoir le « vivre et faire ensemble » à Teyran</p>
+        </div>
     </header>
 
-    <div class="section">
-        <h2>Qui sommes-nous ?</h2>
-        <p>Présente ici les objectifs de l'association, son histoire et ses actions sur le terrain.</p>
-    </div>
+    <main>
+        <div class="section">
+            <h2>Qui sommes-nous ?</h2>
+            <p>
+                L'association <strong>Les Teyrannais Motivés</strong> réunit des habitants de Teyran de toutes générations. 
+                Notre ambition est de dynamiser notre village en créant des occasions de rencontre, d'échange et d'action collective 
+                pour renforcer la convivialité et le lien social.
+            </p>
+        </div>
 
-    <div class="section">
-        <h2>Nos activités</h2>
-        <ul>
-            <li>Action ou événement 1</li>
-            <li>Action ou événement 2</li>
-            <li>Ateliers et rencontres régulières</li>
-        </ul>
-    </div>
+        <div class="section">
+            <h2>Nos axes d'action</h2>
+            <ul>
+                <li><strong>Vie de village & Convivialité :</strong> Animation du cœur de bourg, soutien aux commerces locaux et rendez-vous sur le marché.</li>
+                <li><strong>Initiatives citoyennes :</strong> Organisation d'ateliers, de débats et de projets collaboratifs.</li>
+                <li><strong>Culture & Événements :</strong> Accueil et soutien aux manifestations artistiques et culturelles (ateliers, rendez-vous locaux).</li>
+                <li><strong>Mobilités & Cadre de vie :</strong> Réflexions et actions autour des mobilités douces et de la transition au quotidien.</li>
+            </ul>
+        </div>
 
-    <div class="section">
-        <h2>Nous rejoindre ou nous contacter</h2>
-        <p>Adresse e-mail : contact@votre-asso.fr</p>
-        <p>Lieu d'activité : Ville / Quartier</p>
-        <p><a href="#" class="btn">Adhérer à l'association</a></p>
-    </div>
+        <div class="section cta-box">
+            <h2>Rejoignez l'aventure !</h2>
+            <p>Vous habitez Teyran et souhaitez vous investir, soutenir l'association ou suivre nos actualités ?</p>
+            
+            <div class="buttons-group">
+                <a href="https://www.helloasso.com/associations/teyrannais-motives" target="_blank" rel="noopener" class="btn btn-primary">Adhérer sur HelloAsso</a>
+                <a href="https://www.facebook.com/profile.php?id=61564991493319" target="_blank" rel="noopener" class="btn btn-facebook">Suivre sur Facebook</a>
+            </div>
+        </div>
+    </main>
 
     <footer>
-        <p>&copy; 2026 Nom de l'Association — Tous droits réservés</p>
+        <p>&copy; 2026 Les Teyrannais Motivés — Association loi 1901 — Teyran (34820)</p>
+        <p style="margin-top: 5px;">
+            <a href="https://www.facebook.com/profile.php?id=61564991493319" target="_blank" rel="noopener">Facebook</a> | 
+            <a href="https://www.helloasso.com/associations/teyrannais-motives" target="_blank" rel="noopener">HelloAsso</a>
+        </p>
     </footer>
 
 </body>
