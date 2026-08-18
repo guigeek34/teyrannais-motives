@@ -48,7 +48,7 @@
 
         header {
             background-color: white;
-            padding: 40px 20px;
+            padding: 40px 20px 30px 20px;
             text-align: center;
             border-bottom: 5px solid var(--teal-primary);
             box-shadow: 0 2px 10px rgba(0,0,0,0.03);
@@ -59,22 +59,11 @@
             margin: 0 auto;
         }
 
-        .logo-title {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 10px;
-        }
-
-        .logo-title img {
-            width: 55px;
-            height: 55px;
-        }
-
-        h1 {
-            color: var(--teal-primary);
-            font-size: 2.3rem;
+        .header-logo {
+            max-width: 320px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 15px;
         }
 
         .tagline {
@@ -194,11 +183,8 @@
 
     <header>
         <div class="header-container">
-            <div class="logo-title">
-                <img src="favicon.png" alt="Logo Les Teyrannais Motivés">
-                <h1>Les Teyrannais Motivés</h1>
-            </div>
-            <p class="tagline">Promouvoir le « vivre et faire ensemble » à Teyran</p>
+            <img src="logoLTM_vert.png" alt="Les Teyrannais Motivés" class="header-logo">
+            <p class="tagline">Ensemble, tissons des liens et partageons Teyran</p>
         </div>
     </header>
 
